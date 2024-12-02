@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Quiz App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div id="particles" class="particles"></div>
+    <div class="code-animation">
+        <div class="code-line">&lt;div class="awesome-code"&gt;</div>
+        <div class="code-line">const webDev = "fun";</div>
+        <div class="code-line">.css { animation: float; }</div>
+        <div class="code-line">function learnCoding() { }</div>
+        <div class="code-line">&lt;/div&gt;</div>
+        <div class="code-line">const quiz = new WebDevQuiz();</div>
+        <div class="code-line">.container { perspective: 1000px; }</div>
+        <div class="code-line">async function learnToCode() { }</div>
+        <div class="code-line">&lt;div class="awesome-quiz"&gt;</div>
+        <div class="code-line">import { knowledge } from 'brain';</div>
+        <div class="code-line">git commit -m "Learning every day";</div>
+        <div class="code-line">while(coding) { improve(); }</div>
+        <div class="code-line">npm install success --save</div>
+    </div>
+    <div class="container">
+        <div class="quiz-app">
+            <h1 class="animate__animated animate__fadeIn">Web Development Quiz</h1>
+            
+            <div id="progress-info" class="progress-info animate__animated animate__fadeIn">
+                <div class="progress-text">Question <span id="current-question">1</span> of 10</div>
+                <div class="motivation-text" id="motivation-text"></div>
+            </div>
+
+            <div class="quiz-header">
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="score-container">
+                    Score: <span id="score">0</span>
+                </div>
+            </div>
+            
+            <div class="quiz-body">
+                <div id="question-container">
+                    <h2 id="question" class="animate__animated animate__fadeIn">Question goes here</h2>
+                    <div id="options-container">
+                        <!-- Options will be inserted here -->
+                    </div>
+                </div>
+                
+                <div id="result-container" class="hidden">
+                    <div class="celebration-container">
+                        <div class="firework"></div>
+                        <div class="firework"></div>
+                        <div class="firework"></div>
+                    </div>
+                    <h2 class="animate__animated animate__bounceIn">Quiz Complete! 🎉</h2>
+                    <div class="final-score animate__animated animate__fadeInUp">
+                        <span id="final-score">0</span>/100
+                    </div>
+                    <p id="feedback-message" class="animate__animated animate__fadeInUp"></p>
+                    <div id="quote-container" class="animate__animated animate__fadeInUp hidden">
+                        <blockquote id="programmer-quote"></blockquote>
+                        <cite id="quote-author"></cite>
+                    </div>
+                    <div id="resources-container" class="animate__animated animate__fadeInUp">
+                        <h3>Helpful Resources to Continue Learning:</h3>
+                        <div id="resources-list"></div>
+                    </div>
+                    <button id="restart-btn" class="btn animate__animated animate__fadeInUp">Try Again</button>
+                </div>
+            </div>
+            
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn" disabled>Next Question</button>
+            </div>
+        </div>
+    </div>
+    <footer class="attribution">
+        <p>Powered by <span class="ghost-text">GHOST</span> | Created by Kevin Julu</p>
+    </footer>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
