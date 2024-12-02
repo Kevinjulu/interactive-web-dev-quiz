@@ -2,7 +2,7 @@
 
 A modern, animated quiz application to test and improve your web development knowledge. Built with pure HTML, CSS, and JavaScript.
 
-![Quiz App Preview](images/quiz-preview.png)
+![Quiz App Preview](images/quiz-preview.PNG)
 
 ## ✨ Features
 
