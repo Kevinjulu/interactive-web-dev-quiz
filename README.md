@@ -2,6 +2,8 @@
 
 A modern, animated quiz application to test and improve your web development knowledge. Built with pure HTML, CSS, and JavaScript.
 
+![Quiz App Preview](images/quiz-preview.png)
+
 ## ✨ Features
 
 - 🎯 Dynamic question loading with randomized selection
@@ -23,7 +25,7 @@ A modern, animated quiz application to test and improve your web development kno
 
 ## 🎮 Try It Out
 
-1. Visit the live demo: [Web Dev Quiz App](#) *(Coming soon)*
+1. Visit the live demo: [Web Dev Quiz App](https://kevinjulu.github.io/interactive-web-dev-quiz)
 2. Test your web development knowledge
 3. Get instant feedback
 4. Explore curated learning resources
@@ -32,12 +34,11 @@ A modern, animated quiz application to test and improve your web development kno
 ## 🖥️ Local Development
 
 1. Clone the repository
+```bash
+git clone https://github.com/Kevinjulu/interactive-web-dev-quiz.git
+```
 2. Open `index.html` in your browser
 3. Start learning!
-
-## 📸 Screenshots
-
-*(Coming soon)*
 
 ## 👨‍💻 Author
 
