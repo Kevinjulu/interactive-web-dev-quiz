@@ -448,7 +448,7 @@ h1 {
 /* Attribution Footer */
 .attribution {
     position: fixed;
-    bottom: 0;
+    bottom: -60px; /* Hide footer by default */
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
@@ -458,27 +458,11 @@ h1 {
     color: #ffffff;
     font-size: 0.9rem;
     z-index: 1000;
+    transition: bottom 0.3s ease-in-out;
 }
 
-.ghost-text {
-    font-weight: bold;
-    background: linear-gradient(45deg, #ff6b6b, #4facfe);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: ghostPulse 2s infinite;
-}
-
-@keyframes ghostPulse {
-    0% {
-        text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
-    }
-    50% {
-        text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
-    }
-    100% {
-        text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
-    }
+.attribution.visible {
+    bottom: 0;
 }
 
 /* Mobile Optimizations */

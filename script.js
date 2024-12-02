@@ -249,6 +249,49 @@ function showResults() {
     displayResources();
 }
 
+// Footer visibility control
+function handleFooterVisibility() {
+    const footer = document.querySelector('.attribution');
+    let lastScrollPosition = 0;
+    let scrollTimeout;
+
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const isScrollingDown = currentScroll > lastScrollPosition;
+        const isNearBottom = (window.innerHeight + currentScroll) >= document.documentElement.scrollHeight - 100;
+
+        if (isScrollingDown || isNearBottom) {
+            footer.classList.add('visible');
+        } else {
+            footer.classList.remove('visible');
+        }
+
+        // Hide footer after 2 seconds of no scrolling
+        scrollTimeout = setTimeout(() => {
+            if (!isNearBottom) {
+                footer.classList.remove('visible');
+            }
+        }, 2000);
+
+        lastScrollPosition = currentScroll;
+    });
+
+    // Show footer when near bottom of page
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const isNearBottom = (window.innerHeight + currentScroll) >= document.documentElement.scrollHeight - 100;
+        
+        if (isNearBottom) {
+            footer.classList.add('visible');
+        }
+    });
+}
+
+// Initialize footer visibility control
+handleFooterVisibility();
+
 // Event Listeners
 nextButton.addEventListener('click', () => {
     currentQuestion++;
