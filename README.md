@@ -2,6 +2,8 @@
 
 A modern, animated quiz application to test and improve your web development knowledge. Built with pure HTML, CSS, and JavaScript.
 
+🎮 **[Try the Quiz App Live](https://kevinjulu.github.io/interactive-web-dev-quiz/)**
+
 ![Quiz App Preview](images/quiz-preview.PNG)
 
 ## ✨ Features
