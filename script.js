@@ -254,21 +254,26 @@ function handleFooterVisibility() {
     const footer = document.querySelector('.attribution');
     let lastScrollPosition = 0;
     let scrollTimeout;
+    const scrollThreshold = 200; // Minimum scroll before showing footer
+
+    // Initially hide footer
+    footer.classList.remove('visible');
 
     window.addEventListener('scroll', () => {
         clearTimeout(scrollTimeout);
 
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const isScrollingDown = currentScroll > lastScrollPosition;
+        const hasScrolledEnough = currentScroll > scrollThreshold;
         const isNearBottom = (window.innerHeight + currentScroll) >= document.documentElement.scrollHeight - 100;
 
-        if (isScrollingDown || isNearBottom) {
+        if ((isScrollingDown && hasScrolledEnough) || isNearBottom) {
             footer.classList.add('visible');
-        } else {
+        } else if (!isNearBottom && !isScrollingDown) {
             footer.classList.remove('visible');
         }
 
-        // Hide footer after 2 seconds of no scrolling
+        // Hide footer after 2 seconds of no scrolling unless near bottom
         scrollTimeout = setTimeout(() => {
             if (!isNearBottom) {
                 footer.classList.remove('visible');
@@ -277,20 +282,12 @@ function handleFooterVisibility() {
 
         lastScrollPosition = currentScroll;
     });
-
-    // Show footer when near bottom of page
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        const isNearBottom = (window.innerHeight + currentScroll) >= document.documentElement.scrollHeight - 100;
-        
-        if (isNearBottom) {
-            footer.classList.add('visible');
-        }
-    });
 }
 
-// Initialize footer visibility control
-handleFooterVisibility();
+// Initialize footer visibility control after page load
+window.addEventListener('load', () => {
+    handleFooterVisibility();
+});
 
 // Event Listeners
 nextButton.addEventListener('click', () => {

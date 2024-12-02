@@ -448,7 +448,7 @@ h1 {
 /* Attribution Footer */
 .attribution {
     position: fixed;
-    bottom: -60px; /* Hide footer by default */
+    bottom: -100%; /* Start completely off screen */
     left: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
@@ -459,10 +459,98 @@ h1 {
     font-size: 0.9rem;
     z-index: 1000;
     transition: bottom 0.3s ease-in-out;
+    opacity: 0;
 }
 
 .attribution.visible {
     bottom: 0;
+    opacity: 1;
+}
+
+.ghost-text {
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b6b, #4facfe);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: ghostPulse 2s infinite;
+}
+
+@keyframes ghostPulse {
+    0% {
+        text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+    }
+}
+
+/* Animations */
+@keyframes firework {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes scoreUpdate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100vw);
+        opacity: 0;
+    }
 }
 
 /* Mobile Optimizations */
@@ -558,70 +646,5 @@ h1 {
     
     .resource-item a {
         font-size: 1rem;
-    }
-}
-
-/* Animations */
-@keyframes firework {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 1;
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.5;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.5);
-        opacity: 0;
-    }
-}
-
-@keyframes scoreUpdate {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes gradientBG {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) translateX(0);
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh) translateX(100vw);
-        opacity: 0;
     }
 }
